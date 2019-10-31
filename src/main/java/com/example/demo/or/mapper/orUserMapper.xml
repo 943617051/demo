@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.or.mapper.orUserMapper">
+	<select id="login" resultType="com.example.demo.or.bean.User" parameterType="com.example.demo.or.bean.User">
+	select userName,passWord from or_user where userName=#{userName} and passWord=#{passWord}
+	</select>
+	<select id="count" resultType="int">
+	select count(*) from or_tuan
+	</select>
+	<select id="list" resultType="map" parameterType="map">
+	select * from or_tuan limit #{startIndex},#{pageSize}
+	</select>
+	<insert id="add">
+	insert into or_tuan values(null,#{titlename},#{start_date},#{stop_date},#{sumprice},#{shopnum},#{shop_stock},#{jsname},#{sid})
+	</insert>
+	<select id="xiu" resultType="com.bw.dto.Score">
+	select * from or_tuan where id=#{id}
+	</select>
+	<delete id="del">
+	delete from or_tuan where id=#{id}
+	 </delete>
+	 <update id="update">
+	 update or_tuan set titlename=#{titlename},start_date#{start_date},stop_date#{stop_date},sumprice=#{sumprice},shopnum=#{shopnum},shop_stock=#{shop_stock},jsname=#{jsname},sid=#{sid} where id=#{id}
+	 </update>
+</mapper>
+
+
+
+
+
+
+
+
