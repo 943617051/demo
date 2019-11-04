@@ -6,6 +6,7 @@ public class Shop {
     private String shopname;
     private String totleprice;
     private String totlenum;
+    private String aa;
 
     public int getId() {
         return id;
